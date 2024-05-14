@@ -153,11 +153,11 @@ function displayMoviesFromLocalStorage(type, page) {
       pageListEl.classList.add("is-hidden");
       statusMessage.textContent = "No movies added to the list yet";
       movieListEl.appendChild(statusMessage);
-      return;
-   } 
-   pageListEl.classList.remove("is-hidden");
-   loaderEl.classList.remove("is-hidden"); 
-   createMovieCards(movies);
+   } else {
+      pageListEl.classList.remove("is-hidden");
+      loaderEl.classList.remove("is-hidden"); 
+      createMovieCards(movies);
+   }
 }
 
 function createMovieCards(movies) {
