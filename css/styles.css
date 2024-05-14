@@ -44,6 +44,13 @@ img {
   height: auto;
 }
 
+.center-text {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .container {
   width: 1024px;
   margin: 0 auto;

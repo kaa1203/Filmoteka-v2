@@ -16,6 +16,8 @@ const movieListEl = document.querySelector(".movie-list");
 const pageListEl = document.querySelector(".page-list");
 const loaderEl = document.querySelector(".loader");
 const overlayEl = document.getElementsByClassName("overlay");
+const statusMessage = document.createElement("li");
+statusMessage.className = "center-text";
 
 navLinkEl[0].addEventListener("click", navHome);
 navLinkEl[1].addEventListener("click", navLib);
@@ -84,7 +86,8 @@ function onSearch() {
          } else {
             loaderEl.classList.add("is-hidden");
             pageListEl.classList.add("is-hidden");
-            movieListEl.innerHTML = `There are no movie titled "${search}" found.` ;
+            statusMessage.textContent = `There are no movie titled "${search}" found.` ;
+            movieListEl.appendChild(statusMessage);
          }
       })
    } catch (e) {
@@ -124,10 +127,10 @@ function displayMovies(page) {
 displayMovies(currentPage);
 
 function displayMoviesFromLocalStorage(type, page) {
-   let movieList = JSON.parse(localStorage.getItem(type));
-   let maximumPage = Math.ceil(movieList.length / 20);
    page = currentPage;
 
+   let movieList = JSON.parse(localStorage.getItem(type));
+   let maximumPage = Math.ceil(movieList.length / 20);
    let initialSlice = (page - 1) * 20;
    let lastSlice = page * 20;
    
@@ -143,8 +146,16 @@ function displayMoviesFromLocalStorage(type, page) {
       results: movieList,
       total_pages: maximumPage
    }
-
+   
    movieListEl.innerHTML = "";
+   
+   if (movieList.length === 0) {
+      pageListEl.classList.add("is-hidden");
+      statusMessage.textContent = "No movies added to the list yet";
+      movieListEl.appendChild(statusMessage);
+      return;
+   } 
+
    loaderEl.classList.remove("is-hidden"); 
    createMovieCards(movies);
 }
