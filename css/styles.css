@@ -488,7 +488,9 @@ footer {
   }
 
   .modal-close {
-    padding: 10px 10px 5px 10px;
+    font-size: 30px;
+    font-weight: 200;
+    padding: 10px;
   }
 
   .movie-item {
