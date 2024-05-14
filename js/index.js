@@ -155,7 +155,7 @@ function displayMoviesFromLocalStorage(type, page) {
       movieListEl.appendChild(statusMessage);
       return;
    } 
-
+   pageListEl.classList.remove("is-hidden");
    loaderEl.classList.remove("is-hidden"); 
    createMovieCards(movies);
 }
