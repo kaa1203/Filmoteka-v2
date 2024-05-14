@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmoteka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-bar">
+                <div class="nav-logo">
+                    <svg class="nav-icon icon">
+                        <use href="images/icons.svg?#film"></use>
+                    </svg>
+                    <span class="logo-text">Filmoteka</span>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">My Library</a>
+                    </li>
+                </ul>
+        
+            </nav>
+            <img src="../images/header2.png" class="is-hidden">
+            
+            <div class="nav-search">
+                <input type="text" class="nav-searchbar" id="navSearch" placeholder="Search movies..." autocomplete="off">
+                <svg class="icon">
+                    <use href="images/icons.svg?#search"></use>
+                </svg>
+            </div>
+
+            <div class="nav-library is-hidden">
+                <button class="nav-button" type="button" data-button="watched">Watched</button>
+                <button class="nav-button" type="button" data-button="queue">Queue</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="loader is-hidden"></div>
+                <ul class="movie-list"></ul>
+                <ul class="page-list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                <span>
+                    © 2024 | All Rights Reserved |  
+                </span>
+                <span class="footer-cta">
+                    Developed with
+                    <svg class="footer-icon icon">
+                        <use href="images/icons.svg?#heart"></use>
+                    </svg>
+                    by
+                    <a href="https://github.com/kaa1203" target="_blank" class="footer-link">GoIT Students</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="module" src="./js/exports.js"></script>
+    <script type="module" src="./js/index.js"></script>
+</body>
+</html>
